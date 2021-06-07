@@ -1,0 +1,1 @@
+Run `dotnet lambda package SurfReport.zip --framework netcoreapp3.1 -pl .` to create the zip file with all the assets
