@@ -9,4 +9,4 @@ It uses EventBridge to trigger the lambda once per day at 10am
 
 ## Deploying
 ### Packaging lambda
-Run `deploy.sh` which is stored inside the devtools folder to create the zip file with all the assets. This can then be uploaded in the AWS console or use a pipeline to deploy it.
+Run `package.sh` which is stored inside the devtools folder to create the zip file with all the assets. This can then be uploaded in the AWS console or use a pipeline to deploy it.
