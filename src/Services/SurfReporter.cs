@@ -5,20 +5,20 @@ using SurfReport.Models;
 
 namespace SurfReport.Services
 {
-    public class SurfReportAnalyser
+    public class SurfReporter
     {
         private readonly MetServiceApi _metServiceApi;
         private readonly double _minIdealWaveHeight;
         private readonly double _maxIdealWaveHeight;
 
-        public SurfReportAnalyser()
+        public SurfReporter(MetServiceApi metServiceApi)
         {
-            _metServiceApi = new MetServiceApi();
+            _metServiceApi = metServiceApi;
             _minIdealWaveHeight = 1.25;
             _maxIdealWaveHeight = 1.9;
         }
 
-        public async Task<IEnumerable<IndividualSurfReport>> Analyse()
+        public async Task<IEnumerable<IndividualSurfReport>> Fetch()
         {
             // West coast beaches
             var omaha = await _metServiceApi.GetSurfReport("great-barrier","omaha");

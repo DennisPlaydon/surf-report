@@ -7,18 +7,20 @@ namespace SurfReport
     {
         static async Task Main(string[] args)
         {
-            await Handle();
+            var metServiceApi = new MetServiceApi();
+            await Handle(metServiceApi);
         }
         
         public async Task FunctionHandler()
         {
-            await Handle();
+            var metServiceApi = new MetServiceApi();
+            await Handle(metServiceApi);
         }
 
-        private static async Task Handle()
+        private static async Task Handle(MetServiceApi metServiceApi)
         {
-            var reportAnalyser = new SurfReportAnalyser();
-            var idealSurfReports = await reportAnalyser.Analyse();
+            var surfReporter = new SurfReporter(metServiceApi);
+            var idealSurfReports = await surfReporter.Fetch();
 
             var pushNotificationService = new PushNotificationService();
             var body = pushNotificationService.FormatReportBody(idealSurfReports);
