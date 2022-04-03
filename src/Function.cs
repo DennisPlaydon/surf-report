@@ -5,7 +5,7 @@ namespace SurfReport
 {
     public class Function
     {
-        static async Task Main(string[] args)
+        static async Task Main()
         {
             var metServiceApi = new MetServiceApi();
             await Handle(metServiceApi);

@@ -14,8 +14,8 @@ namespace SurfReport.Services
         public SurfReporter(MetServiceApi metServiceApi)
         {
             _metServiceApi = metServiceApi;
-            _minIdealWaveHeight = 1.25;
-            _maxIdealWaveHeight = 1.9;
+            _minIdealWaveHeight = 0.7;
+            _maxIdealWaveHeight = 1.3;
         }
 
         public async Task<IEnumerable<IndividualSurfReport>> Fetch()
